@@ -16,9 +16,9 @@ app.get('/events', (req,res) => {
 //Get Event by id
 app.get("/events/:id", (req,res) => {
     const id = parseInt(req.params.id);
-    const foundEvent = events.find((e) => e.id ===id);
+    const foundEvent = events.find((e) => e.id === id);
     console.log(foundEvent)
-    if(!foundEvent) return res.status(404).json({Message: "Event not found"})
+    if(!foundEvent) return res.status(404).json({Error: "Event not found"})
     res.json(foundEvent)
 
 })
